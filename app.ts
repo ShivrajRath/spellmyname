@@ -1,0 +1,3 @@
+import {SPELLINGS} from 'spellings';
+
+
