@@ -1,0 +1,11 @@
+{
+  "name": "Spell my name",
+  "short_name": "SPELL NAME",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#000",
+  "description": "Spelling alphabets for your name",
+  "related_applications": [{
+    "platform": "web"
+  }]
+}
