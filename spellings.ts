@@ -2,7 +2,7 @@
  * Contains the list of words
  */
 
-export const SPELLINGS = {
+export const SPELLINGS = < any > {
     A: 'Alpha',
     B: 'Bravo',
     C: 'Charlie',

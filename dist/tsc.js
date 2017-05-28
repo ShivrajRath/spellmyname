@@ -30,8 +30,16 @@ define("spellings", ["require", "exports"], function (require, exports) {
         Z: 'Zulu'
     };
 });
-define("app", ["require", "exports"], function (require, exports) {
+define("app", ["require", "exports", "spellings"], function (require, exports, spellings_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    var $inEl = document.getElementById('name');
+    var $spelEl = document.getElementById('spelling');
+    $inEl.addEventListener('change', function () {
+        $spelEl.innerHTML = '';
+        $inEl.value.split('').forEach(function (letter) {
+            $spelEl.innerHTML += "<p><span>" + letter + " : </span> " + spellings_1.SPELLINGS[letter] + "</span></p>";
+        });
+    });
 });
 //# sourceMappingURL=tsc.js.map
