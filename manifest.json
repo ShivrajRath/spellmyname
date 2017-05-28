@@ -1,7 +1,7 @@
 {
-  "name": "Spell my name",
-  "short_name": "SPELL NAME",
-  "start_url": ".",
+  "name": "SPELL-NAME",
+  "short_name": "SPELL-NAME",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "#000",
   "description": "Spelling alphabets for your name",
