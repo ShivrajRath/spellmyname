@@ -35,11 +35,18 @@ define("app", ["require", "exports", "spellings"], function (require, exports, s
     Object.defineProperty(exports, "__esModule", { value: true });
     var $inEl = document.getElementById('name');
     var $spelEl = document.getElementById('spelling');
-    $inEl.addEventListener('change', function () {
+    function display(str) {
+        localStorage.setItem('spell.name', str);
         $spelEl.innerHTML = '';
-        $inEl.value.split('').forEach(function (letter) {
-            $spelEl.innerHTML += "<p><span>" + letter + " : </span> " + spellings_1.SPELLINGS[letter] + "</span></p>";
+        (str || '').replace(/\W|[0-9]/gi, '').split('').forEach(function (letter) {
+            $spelEl.innerHTML += "<tr><td>" + letter + "</td><td>&nbsp;&nbsp;-&nbsp;&nbsp;</td><td>" + spellings_1.SPELLINGS[letter.toUpperCase()] + "</td></tr>";
         });
+    }
+    $inEl.addEventListener('keyup', function () {
+        display($inEl.value);
     });
+    var lastEnter = localStorage.getItem('spell.name');
+    display(lastEnter);
+    $inEl.value = lastEnter;
 });
 //# sourceMappingURL=tsc.js.map

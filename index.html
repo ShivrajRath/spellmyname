@@ -5,13 +5,18 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Spell my name</title>
+  <title>SPELL-MY-NAME</title>
   <link rel="stylesheet" type="text/css" href="./app.css">
+  <link rel="manifest" href="/manifest.json">
 </head>
 
 <body>
-  <input type="text" id="name" class="input-text" name="name" placeholder="Type your name">
-  <div id="spelling" class="spelling">
+  <input type="text" id="name" class="input-text" name="name" placeholder="Type your name" autocomplete="off">
+  <div class="spelling">
+    <table>
+      <tbody id="spelling">
+      </tbody>
+    </table>
   </div>
   <script data-main="main" src="require.min.js"></script>
 </body>
