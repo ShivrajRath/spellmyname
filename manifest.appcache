@@ -1,0 +1,10 @@
+CACHE MANIFEST
+# 2017-05-29
+
+# Explicitly cached 'master entries'.
+CACHE:
+app.css
+index.html
+main.js
+require.min.js
+dist/tsc.js
