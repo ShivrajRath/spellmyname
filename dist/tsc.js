@@ -36,7 +36,9 @@ define("app", ["require", "exports", "spellings"], function (require, exports, s
     var $inEl = document.getElementById('name');
     var $spelEl = document.getElementById('spelling');
     function display(str) {
-        localStorage.setItem('spell.name', str);
+        if (str) {
+            localStorage.setItem('spell.name', str);
+        }
         $spelEl.innerHTML = '';
         (str || '').replace(/\W|[0-9]/gi, '').split('').forEach(function (letter) {
             $spelEl.innerHTML += "<tr><td>" + letter + "</td><td>&nbsp;&nbsp;-&nbsp;&nbsp;</td><td>" + spellings_1.SPELLINGS[letter.toUpperCase()] + "</td></tr>";
@@ -46,7 +48,9 @@ define("app", ["require", "exports", "spellings"], function (require, exports, s
         display($inEl.value);
     });
     var lastEnter = localStorage.getItem('spell.name');
-    display(lastEnter);
-    $inEl.value = lastEnter;
+    if (lastEnter) {
+        display(lastEnter);
+        $inEl.value = lastEnter;
+    }
 });
 //# sourceMappingURL=tsc.js.map
