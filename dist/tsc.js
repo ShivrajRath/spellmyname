@@ -46,7 +46,9 @@ define("app", ["require", "exports", "spellings"], function (require, exports, s
         display($inEl.value);
     });
     var lastEnter = localStorage.getItem('spell.name');
-    display(lastEnter);
-    $inEl.value = lastEnter;
+    if (lastEnter) {
+        display(lastEnter);
+        $inEl.value = lastEnter;
+    }
 });
 //# sourceMappingURL=tsc.js.map

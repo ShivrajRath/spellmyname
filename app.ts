@@ -22,5 +22,7 @@ $inEl.addEventListener('keyup', () => {
 
 // If last feed is in local storage
 let lastEnter = localStorage.getItem('spell.name');
-display(lastEnter);
-$inEl.value = lastEnter;
+if (lastEnter) {
+    display(lastEnter);
+    $inEl.value = lastEnter;
+}
