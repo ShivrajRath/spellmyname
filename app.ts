@@ -7,7 +7,9 @@ let $spelEl = ( < HTMLInputElement > document.getElementById('spelling'));
 
 // Displays into the text box
 function display(str: string) {
-    localStorage.setItem('spell.name', str);
+    if (str) {
+        localStorage.setItem('spell.name', str);
+    }
     $spelEl.innerHTML = '';
     // Remove any special character
     (str || '').replace(/\W|[0-9]/gi, '').split('').forEach(letter => {
